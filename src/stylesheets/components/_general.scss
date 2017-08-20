@@ -1,0 +1,12 @@
+.wrapper-box {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.opacity-change {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; 
+}
+.opacity-change:hover{
+    opacity: 0.8;
+}

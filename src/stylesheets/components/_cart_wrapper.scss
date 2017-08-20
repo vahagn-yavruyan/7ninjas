@@ -1,0 +1,33 @@
+.cart-wrapper {
+    padding-left: 100px;
+    position: relative;
+    margin-top: 90px;
+    margin-bottom: 145px;
+    &:before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 145px;
+        background-color: #d43a40;
+        width: 100%;
+        height: calc(100% - 70px);
+        z-index: -1;
+    }
+    .cart-inner {
+        background: white;
+        box-shadow: -10px 0px 50px rgba(0, 0, 0, 0.05);
+        padding: 20px 60px 50px 50px;
+    }
+}
+
+.cart-summary {
+    text-align: right;
+    font-size: 35px;
+    margin: 50px 0 10px;
+}
+
+@media screen and (max-width: 1180px) {
+    .cart-wrapper {
+        padding: 0 20px;
+    }
+}

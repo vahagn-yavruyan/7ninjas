@@ -1,0 +1,93 @@
+.cart-item-wrapper {
+    font-size: 0;
+    padding: 40px 35px 35px;
+    border-bottom: 2px solid #eaeaeb;
+    position: relative;
+    .image-box {
+        border-radius: 10px;
+        width: 135px;
+        height: 135px;
+        text-align: center;
+        line-height: 135px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        vertical-align: top;
+        img {
+            width: 85px;
+            vertical-align: middle;
+        }
+    }
+    .info-box {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 40px;
+        .item-title {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        .item-info {
+            color: #7c7c7c;
+            font-size: 16px;
+            max-width: 380px;
+            line-height: 25px;
+        }
+    }
+    .sku-box-wrapper {
+        margin: 40px 0 0;
+        position: relative;
+        display: inline-block;
+        &:before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            right: 20px;
+            border-top: 12px solid #838383;
+            top: 21px;
+        }
+        .sku-box {
+            -webkit-appearance: none;
+            background: transparent;
+            width: 240px;
+            border: 1px solid #dbdbdb;
+            border-image: none;
+            line-height: 50px;
+            border-radius: 2px;
+            padding: 0 10px;
+            color: #575757;
+            position: relative;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .cart-item-wrapper {
+        text-align: center;
+        .info-box {
+            text-align: left;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .cart-item-wrapper {
+        padding: 40px 0 35px;
+        .image-box {
+            margin: 0 auto 30px;
+            text-align: center;
+            display: block;
+        }
+        .info-box {
+            text-align: center;
+            margin: 0;
+        }
+        .sku-box-wrapper{
+            margin: 20px 0 0;
+        }
+    }
+}

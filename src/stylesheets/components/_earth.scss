@@ -1,0 +1,36 @@
+.earth-wrapper {
+    background: black;
+    padding: 110px 60px 60px;
+    position: relative;
+    &:before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.7;
+    }
+    .earth-img {
+        max-width: 100%;
+    }
+    .earth-title {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        left: 50%;
+        color: white;
+        z-index: 20;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .earth-wrapper {
+        padding: 30px 40px 20px;
+        .earth-title{
+            font-size: 35px;
+        }
+    }
+}

@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+.header-box {
+  text-align: center; }
+  .header-box .img-logo {
+    width: 185px;
+    margin: 35px auto 0;
+    display: block; }
+  .header-box .header-title {
+    font-size: 60px;
+    margin-top: 110px; }
+  .header-box .color-red {
+    color: #d43a40; }
+  .header-box .info-title {
+    font-size: 24px;
+    max-width: 800px;
+    line-height: 40px;
+    margin: 50px auto 0; }
+
+@media screen and (max-width: 960px) {
+  .header-box .header-title {
+    font-size: 44px;
+    margin-top: 70px; }
+  .header-box .info-title {
+    font-size: 18px;
+    max-width: 570px;
+    line-height: 25px;
+    margin: 30px auto 0;
+    padding: 0 20px; } }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  font-family: 'Roboto', sans-serif;
+  color: #2a2a2a; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.wrapper-box {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.opacity-change {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; }
+
+.opacity-change:hover {
+  opacity: 0.8; }
+
+.cart-wrapper {
+  padding-left: 100px;
+  position: relative;
+  margin-top: 90px;
+  margin-bottom: 145px; }
+  .cart-wrapper:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 145px;
+    background-color: #d43a40;
+    width: 100%;
+    height: calc(100% - 70px);
+    z-index: -1; }
+  .cart-wrapper .cart-inner {
+    background: white;
+    box-shadow: -10px 0px 50px rgba(0, 0, 0, 0.05);
+    padding: 20px 60px 50px 50px; }
+
+.cart-summary {
+  text-align: right;
+  font-size: 35px;
+  margin: 50px 0 10px; }
+
+@media screen and (max-width: 1180px) {
+  .cart-wrapper {
+    padding: 0 20px; } }
+
+.cart-item-wrapper {
+  font-size: 0;
+  padding: 40px 35px 35px;
+  border-bottom: 2px solid #eaeaeb;
+  position: relative; }
+  .cart-item-wrapper .image-box {
+    border-radius: 10px;
+    width: 135px;
+    height: 135px;
+    text-align: center;
+    line-height: 135px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top; }
+    .cart-item-wrapper .image-box img {
+      width: 85px;
+      vertical-align: middle; }
+  .cart-item-wrapper .info-box {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 40px; }
+    .cart-item-wrapper .info-box .item-title {
+      font-size: 20px;
+      margin-bottom: 25px; }
+    .cart-item-wrapper .info-box .item-info {
+      color: #7c7c7c;
+      font-size: 16px;
+      max-width: 380px;
+      line-height: 25px; }
+  .cart-item-wrapper .sku-box-wrapper {
+    margin: 40px 0 0;
+    position: relative;
+    display: inline-block; }
+    .cart-item-wrapper .sku-box-wrapper:before {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      right: 20px;
+      border-top: 12px solid #838383;
+      top: 21px; }
+    .cart-item-wrapper .sku-box-wrapper .sku-box {
+      -webkit-appearance: none;
+      background: transparent;
+      width: 240px;
+      border: 1px solid #dbdbdb;
+      border-image: none;
+      line-height: 50px;
+      border-radius: 2px;
+      padding: 0 10px;
+      color: #575757;
+      position: relative; }
+      .cart-item-wrapper .sku-box-wrapper .sku-box:focus {
+        outline: none; }
+
+@media screen and (max-width: 1180px) {
+  .cart-item-wrapper {
+    text-align: center; }
+    .cart-item-wrapper .info-box {
+      text-align: left; } }
+
+@media screen and (max-width: 960px) {
+  .cart-item-wrapper {
+    padding: 40px 0 35px; }
+    .cart-item-wrapper .image-box {
+      margin: 0 auto 30px;
+      text-align: center;
+      display: block; }
+    .cart-item-wrapper .info-box {
+      text-align: center;
+      margin: 0; }
+    .cart-item-wrapper .sku-box-wrapper {
+      margin: 20px 0 0; } }
+
+.earth-wrapper {
+  background: black;
+  padding: 110px 60px 60px;
+  position: relative; }
+  .earth-wrapper:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7; }
+  .earth-wrapper .earth-img {
+    max-width: 100%; }
+  .earth-wrapper .earth-title {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    left: 50%;
+    color: white;
+    z-index: 20; }
+
+@media screen and (max-width: 960px) {
+  .earth-wrapper {
+    padding: 30px 40px 20px; }
+    .earth-wrapper .earth-title {
+      font-size: 35px; } }
+
+.quantity-box {
+  border-left: 1px solid #eaeaeb;
+  padding-left: 45px;
+  text-align: right;
+  position: absolute;
+  right: 35px;
+  top: 40px;
+  height: calc(100% - 75px); }
+  .quantity-box .garbage-img {
+    height: 23px;
+    cursor: pointer; }
+  .quantity-box .price-quantity {
+    margin-top: 50px; }
+    .quantity-box .price-quantity .quantity-wrapper {
+      display: inline-block;
+      vertical-align: top; }
+      .quantity-box .price-quantity .quantity-wrapper .quantity-field {
+        width: 60px;
+        height: 40px;
+        border: none;
+        padding: 0;
+        text-align: center;
+        font-size: 16px;
+        color: #7c7c7c;
+        vertical-align: top; }
+        .quantity-box .price-quantity .quantity-wrapper .quantity-field:focus {
+          outline: 0; }
+      .quantity-box .price-quantity .quantity-wrapper .quantity-button {
+        border: 1px solid #dbdbdb;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; }
+        .quantity-box .price-quantity .quantity-wrapper .quantity-button.decrease:before {
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          height: 1px;
+          width: 15px;
+          background-color: #505050; }
+        .quantity-box .price-quantity .quantity-wrapper .quantity-button.increase:before, .quantity-box .price-quantity .quantity-wrapper .quantity-button.increase:after {
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          height: 1px;
+          width: 14px;
+          background-color: #505050; }
+        .quantity-box .price-quantity .quantity-wrapper .quantity-button.increase:before {
+          height: 14px;
+          width: 1px; }
+    .quantity-box .price-quantity .price-box {
+      font-size: 20px;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 45px;
+      margin-top: 5px; }
+
+@media screen and (max-width: 1180px) {
+  .quantity-box {
+    text-align: center;
+    padding: 0;
+    position: static;
+    border-left: none; }
+    .quantity-box .price-quantity {
+      margin-top: 30px;
+      padding-left: 50px; }
+      .quantity-box .price-quantity .price-box {
+        margin-top: 10px; }
+    .quantity-box .garbage-img {
+      position: absolute;
+      right: 20px;
+      top: 40px; } }
+
+@media screen and (max-width: 960px) {
+  .quantity-box .price-quantity {
+    padding: 0; } }
+
+@media screen and (max-width: 480px) {
+  .quantity-box .price-quantity .price-box {
+    margin: 30px 0; } }

@@ -1,0 +1,37 @@
+.header-box {
+    text-align: center;
+    .img-logo {
+        width: 185px;
+        margin: 35px auto 0;
+        display: block;
+    }
+    .header-title {
+        font-size: 60px;
+        margin-top: 110px;
+    }
+    .color-red {
+        color: #d43a40;
+    }
+    .info-title {
+        font-size: 24px;
+        max-width: 800px;
+        line-height: 40px;
+        margin: 50px auto 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .header-box {
+        .header-title {
+            font-size: 44px;
+            margin-top: 70px;
+        }
+        .info-title {
+            font-size: 18px;
+            max-width: 570px;
+            line-height: 25px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+        }
+    }
+}
