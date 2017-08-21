@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import Header from './components/Header.js';
-import CartItem from './components/CartItem.js';
-import Earth from './components/Earth.js';
+import promise from 'redux-promise';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
+import reducers from './reducers';
 import './stylesheets/main.css';
 
-class App extends Component {
-  render() {
+import Header from './components/Header.js';
+import Cart from './components/Cart.js';
+import Earth from './components/Earth.js';
+
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+
+const App = () => {
     return (
-      <div className="wrapper-box">
-        <Header />
-        <div className='cart-wrapper'>
-            <div className='cart-inner'>
-                <CartItem itemPrice='75' />
-                <CartItem itemPrice='75' />
-                <CartItem itemPrice='75' />
-                <h1 className='cart-summary'>225.00 &euro;</h1>    
-            </div>
-        </div>
-        <Earth />
-      </div>
+        <Provider store={createStoreWithMiddleware(reducers)}>
+          <div className="wrapper-box">
+            <Header />
+            <Cart />
+            <Earth />
+          </div>
+        </Provider>
     );
-  }
 }
 
 export default App;
