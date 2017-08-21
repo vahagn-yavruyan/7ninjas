@@ -43,6 +43,10 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
+                &.disabled{
+                    pointer-events: none;
+                    opacity: 0.5;
+                }
                 &.decrease:before {
                     position: absolute;
                     content: '';
@@ -78,6 +82,7 @@
             vertical-align: top;
             margin-left: 45px;
             margin-top: 5px;
+            width: 90px;
         }
     }
 }

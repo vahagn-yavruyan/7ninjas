@@ -12,8 +12,8 @@ class Cart extends Component {
     
     componentDidMount() {
         this.props.fetchItems();
-        console.log(this.props)
     }
+    
     
     renderItems(){
         return this.props.items.map((item) => {

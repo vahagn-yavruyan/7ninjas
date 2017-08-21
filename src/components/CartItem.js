@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { changePrice } from '../actions';
+import { changePrice, deleteItem } from '../actions';
 
 class CartItem extends Component {
     constructor(props) {
@@ -16,6 +16,7 @@ class CartItem extends Component {
       this.increaseQuantity = this.increaseQuantity.bind(this);
       this.decreaseQuantity = this.decreaseQuantity.bind(this);
       this.handleSkuChange = this.handleSkuChange.bind(this);
+      this.handleItemDelete = this.handleItemDelete.bind(this);
   }
     
   componentWillMount() {
@@ -48,15 +49,20 @@ class CartItem extends Component {
   }
     
   handleSkuChange(e) {
-      let sku = this.props.item.sku[e.target.value];
+      const sku = this.props.item.sku[e.target.value];
       this.setState({
           sku,
           quantity: sku.min
       });
   }
+    
+  handleItemDelete() {
+      this.props.deleteItem(this.props.item.id)
+      this.props.changePrice(this.props.price - (this.state.quantity * this.state.sku.price));
+  }
   
   render() {
-    const { item: {id, title, subtitle, sku} } = this.props; 
+    const { item: { title, subtitle } } = this.props; 
     const { quantity } = this.state;
       
     return (
@@ -65,8 +71,8 @@ class CartItem extends Component {
                 <img src={process.env.PUBLIC_URL + '/images/image.jpg'} alt='img' />    
             </div>
             <div className='info-box'>
-                <h3 className='item-title'>{this.props.item.title}</h3>
-                <p className='item-info'>Lorem ipsum dolor sit amet, quis dictum mauris erat alium, ac in pehe pharetra quis non et.</p>
+                <h3 className='item-title'>{title}</h3>
+                <p className='item-info'>{subtitle}</p>
                 <div className='sku-box-wrapper'>
                     <select className='sku-box' name="sku" onChange={this.handleSkuChange}>
                         {this.renderSkuOptions()}
@@ -74,12 +80,12 @@ class CartItem extends Component {
                 </div>
             </div>
             <div className="quantity-box">
-                <img className='garbage-img opacity-change' src={process.env.PUBLIC_URL + '/images/trash.svg'} alt='Trash' /> 
+                <img className='garbage-img opacity-change' src={process.env.PUBLIC_URL + '/images/trash.svg'} onClick={this.handleItemDelete} alt='Trash' /> 
                 <div className='price-quantity'>
                     <div className='quantity-wrapper'>
-                        <span className='quantity-button decrease opacity-change' onClick={this.decreaseQuantity}></span>
+                        <span className={`quantity-button decrease opacity-change ${quantity <= this.state.sku.min ? 'disabled' : ''}`} onClick={this.decreaseQuantity}></span>
                         <input className='quantity-field' type='text' value={quantity} readOnly />
-                        <span className='quantity-button increase opacity-change' onClick={this.increaseQuantity}></span>
+                        <span className={`quantity-button increase opacity-change ${quantity >= this.state.sku.max ? 'disabled' : ''}`} onClick={this.increaseQuantity}></span>
                     </div>
                     <p className='price-box'>{this.state.sku.price*quantity}.00 &euro;</p> 
                 </div> 
@@ -94,7 +100,7 @@ function mapStateToProps( state ){
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ changePrice }, dispatch);
+    return bindActionCreators({ changePrice, deleteItem }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartItem);

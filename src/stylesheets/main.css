@@ -259,6 +259,9 @@ table {
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none; }
+        .quantity-box .price-quantity .quantity-wrapper .quantity-button.disabled {
+          pointer-events: none;
+          opacity: 0.5; }
         .quantity-box .price-quantity .quantity-wrapper .quantity-button.decrease:before {
           position: absolute;
           content: '';
@@ -285,7 +288,8 @@ table {
       display: inline-block;
       vertical-align: top;
       margin-left: 45px;
-      margin-top: 5px; }
+      margin-top: 5px;
+      width: 90px; }
 
 @media screen and (max-width: 1180px) {
   .quantity-box {
